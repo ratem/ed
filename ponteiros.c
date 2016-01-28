@@ -17,13 +17,13 @@ void main(void)
 	printf("Valor de py: %p, conteudo de py: %d \n", py, *py);
 	for(i = 0; i < TAMVETOR; i++)
 	{
-		printf("Valor de px (em decimal): %ld \n", (long)px);
+		printf("Valor de px (em decimal): %lu \n", (unsigned long)px);
 		px++;
 	}
 	printf("\n");
 	for(i = 0; i < TAMVETOR; i++)
 	{
-		printf("Valor de py (em decimal): %ld \n", (long)py);
+		printf("Valor de py (em decimal): %lu \n", (unsigned long)py);
 		py++;
 	}
 }
