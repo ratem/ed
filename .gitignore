@@ -1,0 +1,8 @@
+*~
+*.py[co]
+.coverage
+*.log
+*.o
+*.out
+*.data
+*.zip
