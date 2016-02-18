@@ -27,6 +27,7 @@ packet_t pack(frame_t frame)
 	buffer = frame.type;				//Guarda o boolean num buffer de 16 bits
 	buffer = buffer << 15;				//Desloca o bit para a extrema esquerda
 	packet.data = packet.data | buffer;	//Funde os dois valores
+	return packet;
 }
 
 frame_t unpack(packet_t packet)
@@ -44,7 +45,13 @@ void print16bits(uint16_t data)
 
 int main(void)
 {
-	print16bits(36555);
+	frame_t frame;
+	packet_t packet;
+
+	frame.type = 1;
+	frame.address = 8;
+	packet = pack(frame);
+	print16bits(packet.data);	
 	return 0;
 }
 
