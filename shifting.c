@@ -32,6 +32,11 @@ packet_t pack(frame_t frame)
 
 frame_t unpack(packet_t packet)
 {
+	frame_t frame;
+
+	frame.type = packet.data & 32768 ? 1 : 0;//1000000000000000
+	frame.address = packet.data & 1023; 	 //0000001111111111
+	return frame;
 }
 
 void print16bits(uint16_t data)
@@ -51,7 +56,9 @@ int main(void)
 	frame.type = 1;
 	frame.address = 8;
 	packet = pack(frame);
-	print16bits(packet.data);	
+	print16bits(packet.data);
+	frame = unpack(packet);
+	printf("Type: %u, Address: %u \n", frame.type, frame.address);
 	return 0;
 }
 
