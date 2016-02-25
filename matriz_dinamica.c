@@ -46,17 +46,19 @@ void deallocate(int16_t* matrix)
 
 int main()
 {
-  int16_t *matrix, columns, lines;
+	int16_t *matrix;
+	int columns, lines;
 /*
-  printf("Enter with the number of lines:\n");
-  scanf("%d", (int*)&lines);
-  printf("Enter with the number of columns:\n");
-  scanf("%d", (int*)&columns);
+	printf("Enter with the number of lines: ");
+	scanf("%d", &lines);
+	printf("Enter with the number of columns: ");
+	scanf("%d", &columns);
 */
+//	printf("\n %d %d ", lines, columns);
 	lines = columns = 3;
-  matrix = allocate_matrix(lines, columns);
-  fill_in_matrix(lines, columns, matrix);
+	matrix = allocate_matrix(lines, columns);
+	fill_in_matrix(lines, columns, matrix);
 	print_matrix(lines, columns, matrix);
-  deallocate(matrix);
-  return 0;
+	deallocate(matrix);
+	return 0;
 }
